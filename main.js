@@ -1,4 +1,6 @@
-const usuarios = [];
+//const usuarios = [];
+const storedUsuarios = localStorage.getItem("usuarios");
+const usuarios = storedUsuarios ? JSON.parse(storedUsuarios) : [];
         const dolar = 550;
         const euro = 293.55;
         const yen = 1.91;
@@ -61,4 +63,5 @@ const usuarios = [];
             }
 
             document.getElementById("resultado").innerHTML = 'Monto ingresado: ' + montoIngresado + '\nValor en ' + monedaIngresada.charAt(0).toUpperCase() + monedaIngresada.slice(1) + ': ' + valorFinal.toFixed(2);
-        });
+        }); 
+
